@@ -8,7 +8,6 @@ const bookmarksContainer = document.getElementById('bookmarks-container');
 
 let bookmarks = [];
 
-// Show Modal, Focus on Input
 function showModal() {
   modal.classList.add('show-modal');
   websiteNameEl.focus();
@@ -47,7 +46,7 @@ function storeBookmark(ev) {
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   fetchBookmarks();
   bookmarkForm.reset();
-  websiteNameEl.focus();
+  closeModal();
 }
 
 function renderBookmarks() {
